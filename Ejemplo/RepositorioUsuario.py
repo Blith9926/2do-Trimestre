@@ -1,5 +1,8 @@
 import Ejemplo.Usuario as Usuario
 
+import Usuario
+import random
+
 usuarios = []
 
 #Mantenimiento de un CRUD (Create, Read, Update, Delete)
@@ -7,15 +10,20 @@ usuarios = []
 #CREATE
 def crearUsuario():
 
-    cedula = input("Ingrese su cedula: ")
-    nombre = input("Ingrese su nombre: ")
+    cedula = random.randint(100000000, 899999999)
 
     for usuario in usuarios:
         if usuario.cedula == cedula:
             print("Esta cedula ya esta en el registro")
-            return 
+            return
 
-    nuevo_usuario = Usuario.Usuario(cedula, nombre)
+    nombre = input("Ingrese su nombre: ")
+
+    anno = int(input("Ingrese su anno de nacimiento: "))
+    mes = int(input("Ingrese su mes de nacimiento: "))
+    dia = int(input("Ingrese su dia de nacimiento: "))
+
+    nuevo_usuario = Usuario.Usuario(cedula, nombre, anno, mes, dia )
     usuarios.append(nuevo_usuario)  
 
     print("Usuario agregado satisfactoriamente")
@@ -30,7 +38,8 @@ def leerUsuarios():
     for usuario in usuarios:
         usuario.mostrarDatos()
     
-def buscarUsuario(cedula):
+def buscarUsuario():
+    cedula = int(input("Digite su cedula: ")) 
     for usuario in usuarios:
         if usuario.cedula == cedula:
             return usuario
@@ -39,9 +48,7 @@ def buscarUsuario(cedula):
 
 #UPDATE
 def actualizarUsuario():
-
-    cedula = input("Digite su cedula: ")
-    usuario = buscarUsuario(cedula)
+    usuario = buscarUsuario()
 
     if usuario:
         nombre = input("Digite su nuevo nombre: ")
@@ -53,8 +60,7 @@ def actualizarUsuario():
         print("No se ha encontrado el usuario que quiere modificar.")
 
 def eliminarUsuario():
-    cedula = input("Digite su cedula: ")
-    usuario = buscarUsuario(cedula)
+    usuario = buscarUsuario()
 
     if usuario:
         usuarios.remove(usuario)
