@@ -1,20 +1,24 @@
 from datetime import datetime
+from datetime import date
 
-class Usuario:
+anno = int(input("Ingrese su anno de nacimiento: "))
+mes = int(input("Ingrese su mes de nacimiento: "))
+dia = int(input("Ingrese su dia de nacimiento: "))
 
-    def __init__(self, cedula, nombre, anoNacimiento, mesNacimiento, diaNacimiento):
-        self.cedula = cedula
-        self.nombre = nombre
-        self.anoNacimiento = anoNacimiento
-        self.mesNacimiento = mesNacimiento
-        self.diaNacimiento = diaNacimiento
+fecha_nacimiento = date(anno, mes, dia)
+fecha_actual = date.today()
+edad = fecha_actual.year - fecha_nacimiento.year
 
-    def mostrarDatos(self):
-        fechaNacimiento = datetime(self.anoNacimiento, self.mesNacimiento, self.diaNacimiento)
-        
-        hoy = datetime.now()
-        edad = hoy.year - fechaNacimiento.year
-        if( hoy.month, hoy.day ) < (fechaNacimiento.month, fechaNacimiento.day):
-            edad -= 1
-        
-        print(f"Cedula: {self.cedula}, nombre: {self.nombre} y edad: {edad}")
+print(f"Su edad es: {edad}")
+
+dias_vida = (fecha_actual - fecha_nacimiento).days
+print(f"Usted ha vivido {dias_vida} dias")
+
+proximo_cumple = date(fecha_actual.year, mes, dia)
+if proximo_cumple < fecha_actual:
+    proximo_cumple = date(fecha_actual.year + 1, mes, dia)
+dias_para_cumple = (proximo_cumple - fecha_actual).days
+print(f"Faltan {dias_para_cumple} dias para su proximo cumpleaños")
+
+
+
