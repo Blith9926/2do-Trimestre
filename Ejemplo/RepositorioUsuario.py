@@ -1,4 +1,4 @@
-import Usuario
+import Ejemplo.Usuario as Usuario
 
 usuarios = []
 
