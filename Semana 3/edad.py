@@ -21,4 +21,4 @@ dias_para_cumple = (proximo_cumple - fecha_actual).days
 print(f"Faltan {dias_para_cumple} dias para su proximo cumpleaños")
 
 
-
+# Al restar dos fechas nos indica la cantidad de días entre ellas.

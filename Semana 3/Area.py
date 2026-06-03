@@ -32,3 +32,14 @@ print("Perímetro:", perimetro_redondeado)
 print(2 ** 3)        # 8 (int)
 
 print(math.pow(2, 3))
+
+#sdfasf
+
+#resultado = 2 ** 3  # 8
+#Funciona con enteros, flotantes y números complejos.
+#Mantiene el tipo de dato cuando es posible (si ambos son int y el resultado cabe en un entero, devuelve int).
+
+#resultado = math.pow(2, 3)  # 8.0
+#Siempre devuelve un float, incluso si los argumentos son enteros.
+#Solo acepta números reales (int o float), no complejos.
+#""""
