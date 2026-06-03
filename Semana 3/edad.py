@@ -22,3 +22,5 @@ print(f"Faltan {dias_para_cumple} dias para su proximo cumpleaños")
 
 
 # Al restar dos fechas nos indica la cantidad de días entre ellas.
+#Se usa datetime.date para poder calcular el número de días vividos y los días restantes para el próximo cumpleaños. Ya que no se pueden combinar datetime con date
+#El proximo cumpleaños se calcula comparando la fecha actual con la fecha del cumpleaños de este año. Si ya pasó, se calcula para el próximo año.
