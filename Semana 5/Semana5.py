@@ -1,0 +1,1 @@
+entrada = "     usuario: Diego | edad: 28 | pais: CR   "
