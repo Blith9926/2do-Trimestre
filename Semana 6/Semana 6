@@ -1,0 +1,18 @@
+lista = [10, 20, 30]
+
+try:
+    indice = int(input("Ingrese índice: "))
+    divisor = int(input("Ingrese divisor: "))
+except ValueError:
+    print("Error: Por favor, ingrese valores numéricos válidos.")
+else:
+    try:
+        resultado = lista[indice] / divisor
+        print("Resultado:", resultado)
+    except IndexError:
+        print("Error: Índice fuera de rango.")
+    except ZeroDivisionError:
+        print("Error: El divisor no puede ser cero.")
+
+resultado = lista[indice] / divisor
+print("Resultado:", resultado)
