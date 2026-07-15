@@ -4,11 +4,11 @@ def menu():
 
     while True: 
         print("Mantenimiento de Usuarios:",
-              "1. Crear Usuario", 
-              "2. Leer todos los usuarios", 
-              "3. Actualizar un usuario", 
-              "4. Eliminar un usuario",
-              "5. Salir", sep="\n")
+            "1. Crear Usuario", 
+            "2. Leer todos los usuarios", 
+            "3. Actualizar un usuario", 
+            "4. Eliminar un usuario",
+            "5. Salir", sep="\n")
         
         opcion = input("Digite una opcion: ")
 

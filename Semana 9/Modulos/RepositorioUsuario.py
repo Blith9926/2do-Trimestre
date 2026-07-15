@@ -43,7 +43,20 @@ def crearUsuario():
 
 #READ 
 def leerUsuarios():
+    conexion = obtener_conexion()
+    cursor = conexion.cursor()
+    cursor.execute("SELECT cedula, nombre, anno_nacimiento, mes_nacimiento, dia_nacimiento FROM usuarios")
+    filas = cursor.fetchall()
+    conexion.close()
     
+    
+    for fila in filas:
+        usuario = Usuario.Usuario(fila[0], fila[1], fila[2], fila[3], fila[4])
+        usuarios.append(usuario)
+        
+        
+        
+        
     if len(usuarios) == 0:
         print("No hay usuarios en el sistema")
         return
